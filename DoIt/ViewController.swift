@@ -31,14 +31,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
         let task = tasks[indexPath.row]
+        
         if task.important {
-         cell.textLabel?.text = "❗️\(task.name)"
+            cell.textLabel?.text = "❗️\(task.name)"
         }
         else {
-        cell.textLabel?.text = " \(task.name)"
+            cell.textLabel?.text = " \(task.name)"
         }
+        
         return cell
     }
+    
     @IBAction func plusTapped(_ sender: Any) {
         
      performSegue(withIdentifier: "addSegue", sender: nil)
