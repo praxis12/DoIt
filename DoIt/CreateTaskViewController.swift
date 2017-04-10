@@ -25,7 +25,9 @@ class CreateTaskViewController: UIViewController {
     @IBAction func addTapped(_ sender: Any) {
         
         let task = Task()
+        if textField != nil {
         task.name = textField.text!
+        }
         task.important = importantSwitch.isOn
         
         if task.important {
